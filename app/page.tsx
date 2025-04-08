@@ -58,12 +58,13 @@ export default function Home() {
                 className="flex items-center"
               >
                 <div className="w-10 h-10 mr-2 rounded-full overflow-hidden">
-                  <svg viewBox="0 0 100 100" className="w-full h-full">
-                    <circle cx="50" cy="50" r="50" fill="#0088FF" />
-                    <path d="M50 15 C20 15, 15 45, 50 85 C85 45, 80 15, 50 15" fill="#FFCC00" />
-                    <circle cx="50" cy="35" r="8" fill="#FFCC00" />
-                    <circle cx="50" cy="65" r="8" fill="#0088FF" />
-                  </svg>
+                <Image
+                        src="/assets/LOGO.png"
+                        alt="PyzaSoft Logo"
+                        width={120}
+                        height={120}
+                        className="object-contain"
+                      />
                 </div>
                 <div className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-yellow-400">
                   Pyza<span className="text-yellow-400">Soft</span>
@@ -132,70 +133,414 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="pt-28 pb-20 md:pt-32 md:pb-24 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
-        <div className="container mx-auto px-4 md:px-6 relative">
-          <div className="flex flex-col md:flex-row items-center">
+      {/* High-End Enterprise Hero Section */}
+<section id="home" className="min-h-screen bg-slate-900 relative overflow-hidden flex items-center">
+  {/* Advanced Animated Background */}
+  <div className="absolute inset-0 overflow-hidden">
+    {/* Base Grid Layer */}
+    <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5"></div>
+    
+    {/* Gradient Overlays */}
+    <div className="absolute inset-0 bg-gradient-to-tr from-blue-950/80 via-slate-900/90 to-slate-950/80"></div>
+    
+    {/* Dynamic Lighting Effects */}
+    <motion.div
+      className="absolute inset-0"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 2 }}
+    >
+      {/* Premium Light Sources */}
+      <motion.div
+        className="absolute top-[-10%] left-[-5%] w-[70%] h-[40%] bg-blue-500/10 rounded-full blur-[120px]"
+        animate={{
+          opacity: [0.4, 0.6, 0.4],
+          scale: [1, 1.05, 1],
+        }}
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+      ></motion.div>
+      <motion.div
+        className="absolute bottom-[-20%] right-[-10%] w-[80%] h-[60%] bg-yellow-400/5 rounded-full blur-[150px]"
+        animate={{
+          opacity: [0.3, 0.5, 0.3],
+          scale: [1, 1.1, 1],
+        }}
+        transition={{
+          duration: 10,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 2
+        }}
+      ></motion.div>
+    </motion.div>
+    
+    {/* Particle Effect Layer */}
+    <motion.div
+      className="absolute inset-0"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 0.7 }}
+      transition={{ duration: 3 }}
+    >
+      {Array.from({ length: 15 }).map((_, index) => (
+        <motion.div
+          key={index}
+          className="absolute w-1 h-1 bg-blue-400/30 rounded-full"
+          style={{
+            top: `${Math.random() * 100}%`,
+            left: `${Math.random() * 100}%`,
+          }}
+          animate={{
+            y: [0, Math.random() * -100 - 50],
+            x: [0, (Math.random() - 0.5) * 50],
+            opacity: [0, 0.8, 0],
+            scale: [0, 1, 0],
+          }}
+          transition={{
+            duration: 5 + Math.random() * 10,
+            repeat: Infinity,
+            delay: Math.random() * 5,
+            ease: "easeInOut",
+          }}
+        />
+      ))}
+      {Array.from({ length: 15 }).map((_, index) => (
+        <motion.div
+          key={index + 15}
+          className="absolute w-1 h-1 bg-yellow-300/30 rounded-full"
+          style={{
+            top: `${Math.random() * 100}%`,
+            left: `${Math.random() * 100}%`,
+          }}
+          animate={{
+            y: [0, Math.random() * -100 - 50],
+            x: [0, (Math.random() - 0.5) * 50],
+            opacity: [0, 0.8, 0],
+            scale: [0, 1, 0],
+          }}
+          transition={{
+            duration: 5 + Math.random() * 10,
+            repeat: Infinity,
+            delay: Math.random() * 5,
+            ease: "easeInOut",
+          }}
+        />
+      ))}
+    </motion.div>
+  </div>
+
+  <div className="container mx-auto px-4 md:px-6 relative z-10 py-12">
+    <div className="flex flex-col md:flex-row items-center">
+      {/* Premium Content Section */}
+      <motion.div
+        className="md:w-1/2 mb-12 md:mb-0 md:pr-8"
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: { opacity: 0 },
+          visible: { opacity: 1, transition: { staggerChildren: 0.2 } }
+        }}
+      >
+          {/* Brand Logo with Premium Animation */}
+        {/* <motion.div
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+          }}
+          className="inline-block mb-8 relative"
+        >
+          <div className="relative">
             <motion.div
-              variants={fadeInUp}
-              initial="initial"
-              animate="animate"
-              className="md:w-1/2 mb-12 md:mb-0 text-center md:text-left"
+              className="absolute -inset-1 rounded-lg bg-gradient-to-r from-blue-500 to-yellow-400 opacity-30 blur-lg"
+              animate={{
+                opacity: [0.2, 0.4, 0.2],
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            ></motion.div>
+            <div className="relative md:ml-0 ml-auto mr-auto w-40 h-40">
+              <Image
+                src="/assets/LOGO.png"
+                alt="PyzaSoft Logo"
+                width={160}
+                height={160}
+                className="object-contain"
+              />
+            </div>
+          </div>
+        </motion.div> */}
+        
+        {/* Headline with Staggered Reveal */}
+        <motion.h1
+          variants={{
+            hidden: { opacity: 0, y: 30 },
+            visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+          }}
+          className="text-5xl md:text-7xl font-bold mb-6 leading-tight tracking-tight"
+        >
+          <div className="overflow-hidden">
+            <motion.span 
+              className="block bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600"
+              initial={{ y: 80 }}
+              animate={{ y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4, ease: [0.33, 1, 0.68, 1] }}
             >
-              <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight">
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-yellow-400">
-                  Transforming Ideas Into
-                </span>
-                <br />
-                <span className="text-yellow-400">Digital Excellence</span>
-              </h1>
-              <p className="text-lg text-gray-300 mb-8 max-w-xl">
-                We craft exceptional web solutions and software applications that drive business growth and enhance user experiences.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                <motion.a
-                  href="#contact"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-gradient-to-r from-blue-500 to-yellow-400 text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg hover:shadow-blue-500/40 transition-all"
-                >
-                  Get in Touch <FaArrowRight className="inline-block ml-2" />
-                </motion.a>
-                <motion.a
-                  href="#projects"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-transparent border-2 border-yellow-400 text-yellow-400 px-8 py-3 rounded-full font-semibold hover:bg-yellow-400/10 transition-all"
-                >
-                  View Our Work
-                </motion.a>
-              </div>
+              Transform
+            </motion.span>
+          </div>
+          <div className="overflow-hidden">
+            <motion.span 
+              className="block text-white"
+              initial={{ y: 80 }}
+              animate={{ y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6, ease: [0.33, 1, 0.68, 1] }}
+            >
+              Ideas Into
+            </motion.span>
+          </div>
+          <div className="overflow-hidden">
+            <motion.span 
+              className="block bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-yellow-300"
+              initial={{ y: 80 }}
+              animate={{ y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8, ease: [0.33, 1, 0.68, 1] }}
+            >
+              Reality
+            </motion.span>
+          </div>
+        </motion.h1>
+        
+        {/* Premium Tagline */}
+        <motion.p
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut", delay: 1 } }
+          }}
+          className="text-lg md:text-xl text-gray-300/90 mb-10 max-w-xl leading-relaxed"
+        >
+          Enterprise-grade solutions that drive digital transformation and deliver exceptional user experiences for industry leaders worldwide.
+        </motion.p>
+        
+        {/* CTA Buttons with Premium Styling */}
+        <motion.div
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut", delay: 1.2 } }
+          }}
+          className="flex flex-col sm:flex-row gap-5"
+        >
+          <motion.a
+            href="#contact"
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
+            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold shadow-lg shadow-blue-700/30 flex items-center justify-center group relative overflow-hidden"
+          >
+            <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-500 to-blue-700 transition-all duration-300 ease-out transform group-hover:scale-105"></span>
+            <span className="absolute -inset-px bg-gradient-to-r from-yellow-400/20 to-blue-400/20 rounded-lg opacity-50 group-hover:opacity-80 transition-opacity duration-300"></span>
+            <span className="relative flex items-center">
+              Schedule a Consultation 
+              <motion.span 
+                className="ml-2"
+                animate={{ x: [0, 4, 0] }}
+                transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+              >
+                <FaArrowRight />
+              </motion.span>
+            </span>
+          </motion.a>
+          
+          <motion.a
+            href="#solutions"
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
+            className="px-8 py-4 rounded-lg font-semibold relative group overflow-hidden flex items-center justify-center border border-blue-700/30"
+          >
+            <span className="absolute inset-0 bg-gradient-to-r from-blue-600/5 to-blue-800/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+            <span className="relative text-white">Explore Our Solutions</span>
+          </motion.a>
+        </motion.div>
+        
+        {/* Enterprise Credentials */}
+        <motion.div
+          variants={{
+            hidden: { opacity: 0 },
+            visible: { opacity: 1, transition: { duration: 1.2, delay: 1.5 } }
+          }}
+          className="mt-12 flex flex-col"
+        >
+          <p className="text-sm text-gray-400 mb-3">Trusted by industry leaders</p>
+          <div className="flex items-center space-x-8">
+            {/* Enterprise client logos would go here */}
+            {Array.from({ length: 4 }).map((_, index) => (
+              <div key={index} className="h-6 w-16 bg-gray-400/10 rounded-md"></div>
+            ))}
+          </div>
+        </motion.div>
+      </motion.div>
+      
+      {/* Premium Visual Element */}
+      <motion.div
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
+        className="md:w-1/2 w-full"
+      >
+        <div className="relative w-full h-[500px] md:h-[600px]">
+          {/* Orbital Animation */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <motion.div 
+              className="relative w-[400px] h-[400px]"
+              animate={{ rotate: 360 }}
+              transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+            >
+              {/* Orbital Ring */}
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[380px] h-[380px] rounded-full border border-blue-500/20"></div>
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[320px] h-[320px] rounded-full border border-yellow-400/10"></div>
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[260px] h-[260px] rounded-full border border-blue-500/10"></div>
+              
+              {/* Orbital Elements */}
+              <motion.div 
+                className="absolute top-0 left-1/2 transform -translate-x-1/2 w-16 h-16 flex items-center justify-center"
+                animate={{ rotate: -360 }}
+                transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+              >
+                <div className="w-12 h-12 bg-blue-900/70 backdrop-blur-md rounded-lg flex items-center justify-center shadow-lg shadow-blue-900/20 border border-blue-800/50">
+                  <FaReact className="text-blue-400" size={24} />
+                </div>
+              </motion.div>
+              
+              <motion.div 
+                className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-16 flex items-center justify-center"
+                animate={{ rotate: -360 }}
+                transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+              >
+                <div className="w-12 h-12 bg-blue-900/70 backdrop-blur-md rounded-lg flex items-center justify-center shadow-lg shadow-blue-900/20 border border-blue-800/50">
+                  <FaPython className="text-yellow-400" size={24} />
+                </div>
+              </motion.div>
+              
+              <motion.div 
+                className="absolute left-0 top-1/2 transform -translate-y-1/2 w-16 h-16 flex items-center justify-center"
+                animate={{ rotate: -360 }}
+                transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+              >
+                <div className="w-12 h-12 bg-blue-900/70 backdrop-blur-md rounded-lg flex items-center justify-center shadow-lg shadow-blue-900/20 border border-blue-800/50">
+                  <FaGears className="text-blue-400" size={24} />
+                </div>
+              </motion.div>
+              
+              <motion.div 
+                className="absolute right-0 top-1/2 transform -translate-y-1/2 w-16 h-16 flex items-center justify-center"
+                animate={{ rotate: -360 }}
+                transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+              >
+                <div className="w-12 h-12 bg-blue-900/70 backdrop-blur-md rounded-lg flex items-center justify-center shadow-lg shadow-blue-900/20 border border-blue-800/50">
+                  <FaCheck className="text-yellow-400" size={24} />
+                </div>
+              </motion.div>
             </motion.div>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="md:w-1/2"
-            >
-              <div className="relative h-64 md:h-96 w-full">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-64 h-64 md:w-80 md:h-80 relative">
-                    <svg viewBox="0 0 200 200" className="w-full h-full drop-shadow-2xl">
-                      <circle cx="100" cy="100" r="100" fill="#0088FF" />
-                      <path d="M100 30 C40 30, 30 90, 100 170 C170 90, 160 30, 100 30" fill="#FFCC00" />
-                      <circle cx="100" cy="70" r="15" fill="#FFCC00" />
-                      <circle cx="100" cy="130" r="15" fill="#0088FF" />
-                    </svg>
-                    <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center text-white text-xl font-bold">
-                      PyzaSoft
+            
+            {/* Center Core Element */}
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+              <motion.div
+                className="relative w-48 h-48"
+                animate={{ 
+                  rotate: [0, 10, 0, -10, 0],
+                  scale: [1, 1.05, 1, 1.05, 1]
+                }}
+                transition={{ 
+                  duration: 10, 
+                  repeat: Infinity, 
+                  ease: "easeInOut" 
+                }}
+              >
+                <motion.div
+                  className="absolute -inset-6 rounded-full opacity-20 blur-2xl bg-gradient-to-r from-blue-500 to-yellow-400"
+                  animate={{ 
+                    opacity: [0.1, 0.3, 0.1]
+                  }}
+                  transition={{ 
+                    duration: 4, 
+                    repeat: Infinity, 
+                    ease: "easeInOut" 
+                  }}
+                ></motion.div>
+                
+                <div className="absolute inset-0 rounded-full overflow-hidden backdrop-blur-md bg-gradient-to-br from-blue-900/40 to-slate-900/60 border border-blue-700/30 shadow-xl shadow-blue-900/20">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-yellow-400/10"></div>
+                  
+                  {/* Dynamic Light Elements */}
+                  <motion.div
+                    className="absolute top-1/4 left-1/4 w-1/2 h-1/2 bg-blue-400/20 rounded-full blur-xl"
+                    animate={{ 
+                      scale: [1, 1.2, 1], 
+                      opacity: [0.2, 0.4, 0.2], 
+                      x: [-5, 5, -5], 
+                      y: [-5, 5, -5] 
+                    }}
+                    transition={{ 
+                      duration: 5, 
+                      repeat: Infinity, 
+                      ease: "easeInOut" 
+                    }}
+                  ></motion.div>
+                  
+                  <motion.div
+                    className="absolute bottom-1/4 right-1/4 w-1/2 h-1/2 bg-yellow-400/20 rounded-full blur-xl"
+                    animate={{ 
+                      scale: [1, 1.2, 1], 
+                      opacity: [0.2, 0.4, 0.2], 
+                      x: [5, -5, 5], 
+                      y: [5, -5, 5] 
+                    }}
+                    transition={{ 
+                      duration: 5, 
+                      repeat: Infinity, 
+                      ease: "easeInOut",
+                      delay: 1 
+                    }}
+                  ></motion.div>
+                  
+                  {/* Center Logo */}
+                  <div className="absolute inset-0 flex items-center justify-center p-4">
+                    <div className="w-32 h-32 relative">
+                      <Image
+                        src="/assets/LOGO.png"
+                        alt="PyzaSoft Logo"
+                        width={120}
+                        height={120}
+                        className="object-contain"
+                      />
                     </div>
                   </div>
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            </div>
           </div>
+          
+          {/* Decorative Light Flares */}
+          <motion.div
+            className="absolute top-0 right-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"
+            animate={{ opacity: [0.1, 0.3, 0.1] }}
+            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+          ></motion.div>
+          
+          <motion.div
+            className="absolute bottom-0 left-1/4 w-64 h-64 bg-yellow-400/10 rounded-full blur-3xl"
+            animate={{ opacity: [0.1, 0.3, 0.1] }}
+            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 4 }}
+          ></motion.div>
         </div>
-      </section>
+      </motion.div>
+    </div>
+  </div>
+</section>
 
       {/* Services Section */}
       <section id="services" className="py-20 bg-gradient-to-br from-blue-900/30 via-slate-900 to-slate-800 relative overflow-hidden">
