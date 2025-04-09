@@ -146,7 +146,7 @@ export default function ContactUsSection() {
                                     <div>
                                         <div className="font-semibold text-yellow-400 mb-1">Office</div>
                                         <address className="text-gray-300 not-italic">
-                                            Dhka<br />
+                                            Dhaka<br />
                                             Bangladesh<br />
                                             {/* San Francisco, CA 94103 */}
                                         </address>
