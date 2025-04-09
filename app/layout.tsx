@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "PyzaSoft - Software Development Company",
-  description: "Expert software development company specializing in React, Python, DevOps, and QA solutions.",
+  description: "Expert software development company specializing in React, Python & DevOps.",
 };
 
 export default function RootLayout({
