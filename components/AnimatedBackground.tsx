@@ -28,7 +28,7 @@ const AnimatedBackground = () => {
       <div className="absolute inset-0 bg-[linear-gradient(rgba(66,153,225,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(66,153,225,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
       
       {/* Fixed static stars */}
-      {[...Array(15)].map((_, i) => (
+    {/*   {[...Array(15)].map((_, i) => (
         <div 
           key={`star-${i}`}
           className="absolute rounded-full bg-white"
@@ -40,10 +40,10 @@ const AnimatedBackground = () => {
             opacity: 0.5 + ((i % 5) * 0.1),
           }}
         />
-      ))}
+      ))} */}
       
       {/* Animated glowing orbs that won't cause hydration issues */}
-      <motion.div 
+      {/* <motion.div 
         className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/5 rounded-full blur-3xl"
         animate={{
           opacity: [0.1, 0.3, 0.1],
@@ -54,9 +54,9 @@ const AnimatedBackground = () => {
           repeat: Infinity,
           ease: "easeInOut"
         }}
-      />
+      /> */}
       
-      <motion.div 
+     {/*  <motion.div 
         className="absolute top-3/4 right-1/4 w-80 h-80 bg-yellow-400/5 rounded-full blur-3xl"
         animate={{
           opacity: [0.1, 0.25, 0.1],
@@ -68,9 +68,9 @@ const AnimatedBackground = () => {
           ease: "easeInOut",
           delay: 2
         }}
-      />
+      /> */}
       
-      <motion.div 
+     {/*  <motion.div 
         className="absolute top-1/3 right-1/3 w-64 h-64 bg-cyan-400/5 rounded-full blur-3xl"
         animate={{
           opacity: [0.05, 0.2, 0.05],
@@ -82,7 +82,7 @@ const AnimatedBackground = () => {
           ease: "easeInOut",
           delay: 4
         }}
-      />
+      /> */}
 
       {/* Premium neon accent lines */}
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-500/10 to-transparent"></div>

@@ -5,7 +5,7 @@ export default function ContactUsSection() {
     return (
         <section id="contact" className="py-20 bg-transparent relative overflow-hidden">
             {/* Background Elements */}
-            <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
+            {/* <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div> */}
             <motion.div
                 className="absolute -top-40 right-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"
                 animate={{
@@ -24,7 +24,7 @@ export default function ContactUsSection() {
             ></motion.div>
 
             {/* Animated Particles */}
-            <div className="absolute inset-0 overflow-hidden">
+            {/* <div className="absolute inset-0 overflow-hidden">
                 <motion.div className="w-full h-full">
                     {Array.from({ length: 8 }).map((_, index) => (
                         <motion.div
@@ -48,7 +48,7 @@ export default function ContactUsSection() {
                         />
                     ))}
                 </motion.div>
-            </div>
+            </div> */}
 
             <div className="container mx-auto px-4 md:px-6 relative">
                 <motion.div

@@ -7,7 +7,7 @@ export default function FooterSection() {
             {/* Footer */}
             <footer className="bg-slate-900 text-white pt-16 pb-6 border-t border-yellow-400/20 relative">
                 {/* Simple Background */}
-                <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5"></div>
+                {/* <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5"></div> */}
 
                 <div className="container mx-auto px-4 md:px-6 relative">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">

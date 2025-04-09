@@ -8,7 +8,7 @@ export default function ServicesSection() {
             {/* Services Section */}
             <section id="services" className="py-20 bg-transparent relative overflow-hidden">
                 {/* Background Elements */}
-                <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
+                {/* <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div> */}
                 <motion.div
                     className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/5 rounded-full blur-3xl"
                     animate={{

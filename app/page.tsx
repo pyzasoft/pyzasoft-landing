@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import dynamic from 'next/dynamic';
 import { useState } from 'react';
 import Image from 'next/image';
-import { FaReact, FaPython, FaGears, FaCheck, FaArrowRight } from 'react-icons/fa6';
+import { FaReact, FaPython, FaGears, FaCheck, FaArrowRight, FaJs, FaCloud } from 'react-icons/fa6';
 import ContactUsSection from '@/components/ContactUsSection';
 import FooterSection from '@/components/FooterSection';
 import ServicesSection from '@/components/ServicesSection';
@@ -16,7 +16,7 @@ export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen text-white relative">
+    <div className="min-h-screen max-w-screen text-white relative overflow-x-hidden">
       {/* Unified Background */}
       <AnimatedBackground />
 
@@ -107,7 +107,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="min-h-screen relative flex items-center z-10">
+      <section id="home" className="min-h-screen relative flex items-center z-10 sm:mt-0 mt-[20%]">
         {/* Section-specific glowing elements */}
         <motion.div 
           className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"
@@ -264,8 +264,8 @@ export default function Home() {
                       animate={{ rotate: -360 }}
                       transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
                     >
-                      <div className="w-12 h-12 bg-blue-900/70 backdrop-blur-md rounded-lg flex items-center justify-center shadow-lg shadow-blue-900/20 border border-blue-800/50">
-                        <FaReact className="text-blue-400" size={24} />
+                      <div className="w-12 h-12 bg-blue-900/70 backdrop-blur-md rounded-full flex items-center justify-center shadow-lg shadow-blue-900/20 border border-blue-800/50">
+                        <FaCloud className="text-blue-400" size={24} />
                       </div>
                     </motion.div>
 
@@ -274,7 +274,7 @@ export default function Home() {
                       animate={{ rotate: -360 }}
                       transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
                     >
-                      <div className="w-12 h-12 bg-blue-900/70 backdrop-blur-md rounded-lg flex items-center justify-center shadow-lg shadow-blue-900/20 border border-blue-800/50">
+                      <div className="w-12 h-12 bg-blue-900/70 backdrop-blur-md rounded-full flex items-center justify-center shadow-lg shadow-blue-900/20 border border-blue-800/50">
                         <FaPython className="text-yellow-400" size={24} />
                       </div>
                     </motion.div>
@@ -284,7 +284,7 @@ export default function Home() {
                       animate={{ rotate: -360 }}
                       transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
                     >
-                      <div className="w-12 h-12 bg-blue-900/70 backdrop-blur-md rounded-lg flex items-center justify-center shadow-lg shadow-blue-900/20 border border-blue-800/50">
+                      <div className="w-12 h-12 bg-blue-900/70 backdrop-blur-md rounded-full flex items-center justify-center shadow-lg shadow-blue-900/20 border border-blue-800/50">
                         <FaGears className="text-blue-400" size={24} />
                       </div>
                     </motion.div>
@@ -294,8 +294,8 @@ export default function Home() {
                       animate={{ rotate: -360 }}
                       transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
                     >
-                      <div className="w-12 h-12 bg-blue-900/70 backdrop-blur-md rounded-lg flex items-center justify-center shadow-lg shadow-blue-900/20 border border-blue-800/50">
-                        <FaCheck className="text-yellow-400" size={24} />
+                      <div className="w-12 h-12 bg-blue-900/70 backdrop-blur-md rounded-full flex items-center justify-center shadow-lg shadow-blue-900/20 border border-blue-800/50">
+                        <FaJs className="text-yellow-400" size={24} />
                       </div>
                     </motion.div>
                   </motion.div>

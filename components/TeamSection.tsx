@@ -62,7 +62,7 @@ export default function TeamSection() {
                 className="py-20 relative overflow-hidden"
             >
                 {/* Background Elements */}
-                <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
+                {/* <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div> */}
                 <motion.div
                     className="absolute top-20 right-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"
                     animate={{ opacity: [0.2, 0.3, 0.2], scale: [1, 1.05, 1] }}

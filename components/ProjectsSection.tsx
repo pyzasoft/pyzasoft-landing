@@ -283,7 +283,7 @@ export default function ProjectsSection() {
             className="py-24 bg-transparent relative overflow-hidden"
         >
             {/* Background Elements */}
-            <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
+            {/* <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div> */}
             <motion.div
                 className="absolute top-0 right-0 w-full h-full opacity-20"
                 animate={{ opacity: [0.1, 0.2, 0.1] }}
