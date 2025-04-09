@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import dynamic from 'next/dynamic';
 import { useState } from 'react';
 import Image from 'next/image';
-import { FaReact, FaPython, FaGears, FaCheck, FaArrowRight, FaJs, FaCloud } from 'react-icons/fa6';
+import { FaPython, FaGears, FaArrowRight, FaJs, FaCloud } from 'react-icons/fa6';
 import ContactUsSection from '@/components/ContactUsSection';
 import FooterSection from '@/components/FooterSection';
 import ServicesSection from '@/components/ServicesSection';
