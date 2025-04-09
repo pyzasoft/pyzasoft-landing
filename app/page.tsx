@@ -325,7 +325,7 @@ export default function Home() {
                 </motion.a>
 
                 <motion.a
-                  href="#solutions"
+                  href="#services"
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
                   className="px-8 py-4 rounded-lg font-semibold relative group overflow-hidden flex items-center justify-center border border-blue-700/30"
