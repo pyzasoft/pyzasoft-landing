@@ -256,6 +256,17 @@ export default function ContactUsSection() {
                                 whileHover={{ scale: 1.02, boxShadow: "0 10px 15px -3px rgba(59, 130, 246, 0.3)" }}
                                 whileTap={{ scale: 0.98 }}
                                 className="w-full bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-500 hover:to-blue-700 text-white py-4 rounded-lg font-semibold shadow-lg relative overflow-hidden group z-10"
+                                onClick={() => {
+                                    const name = (document.getElementById('name') as HTMLInputElement)?.value || '';
+                                    const email = (document.getElementById('email') as HTMLInputElement)?.value || '';
+                                    const subject = (document.getElementById('subject') as HTMLInputElement)?.value || '';
+                                    const message = (document.getElementById('message') as HTMLTextAreaElement)?.value || '';
+
+                                    const mailtoLink = `mailto:contact@pyzasoft.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`)}`;
+                                    // alert(mailtoLink); // Log the link to debug
+                                    // window.open(mailtoLink, "_blank");
+                                    window.location.href = mailtoLink;
+                                }}
                             >
                                 <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-yellow-400 to-yellow-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                                 <span className="relative flex items-center justify-center">
