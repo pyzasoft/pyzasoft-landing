@@ -73,7 +73,7 @@ export default function FooterSection() {
                                 Our Services
                             </h3>
                             <ul className="space-y-3">
-                                {['Web Development', 'Mobile Apps', 'DevOps', 'UI/UX Design', 'Cloud Solutions'].map((item, index) => (
+                                {['Web Development', 'SaaS Solutions', 'Backend Development','DevOps & Infrastructure', 'Cloud Solutions'].map((item, index) => (
                                     <li key={index}>
                                         <a
                                             href="#services"

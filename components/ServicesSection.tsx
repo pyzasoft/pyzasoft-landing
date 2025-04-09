@@ -6,7 +6,7 @@ export default function ServicesSection() {
     return (
         <>
             {/* Services Section */}
-            <section id="services" className="py-20 bg-gradient-to-br from-blue-900/30 via-slate-900 to-slate-800 relative overflow-hidden">
+            <section id="services" className="py-20 bg-transparent relative overflow-hidden">
                 {/* Background Elements */}
                 <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
                 <motion.div

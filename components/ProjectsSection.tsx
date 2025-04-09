@@ -280,7 +280,7 @@ export default function ProjectsSection() {
     return (
         <section
             id="projects"
-            className="py-24 bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900/20 relative overflow-hidden"
+            className="py-24 bg-transparent relative overflow-hidden"
         >
             {/* Background Elements */}
             <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>

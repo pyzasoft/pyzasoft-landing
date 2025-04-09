@@ -59,7 +59,7 @@ export default function TeamSection() {
         <>
             <section
                 id="team"
-                className="py-20 bg-gradient-to-br from-slate-900 via-blue-900/20 to-slate-900 relative overflow-hidden"
+                className="py-20 relative overflow-hidden"
             >
                 {/* Background Elements */}
                 <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>

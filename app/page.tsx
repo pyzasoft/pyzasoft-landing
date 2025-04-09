@@ -1,6 +1,7 @@
 'use client';
 
 import { motion, AnimatePresence } from 'framer-motion';
+import dynamic from 'next/dynamic';
 import { useState } from 'react';
 import Image from 'next/image';
 import { FaReact, FaPython, FaGears, FaCheck, FaArrowRight } from 'react-icons/fa6';
@@ -9,12 +10,16 @@ import FooterSection from '@/components/FooterSection';
 import ServicesSection from '@/components/ServicesSection';
 import TeamSection from '@/components/TeamSection';
 import ProjectsSection from '@/components/ProjectsSection';
-
+// import AnimatedBackground from '@/components/AnimatedBackground';
+const AnimatedBackground = dynamic(() => import('@/components/AnimatedBackground'), { ssr: false });
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
+    <div className="min-h-screen text-white relative">
+      {/* Unified Background */}
+      <AnimatedBackground />
+
       {/* Navigation */}
       <nav className="fixed w-full z-50 bg-slate-900/80 backdrop-blur-md border-b border-yellow-400/20">
         <div className="container mx-auto px-4 md:px-6 py-4">
@@ -102,108 +107,37 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      {/* High-End Enterprise Hero Section */}
-      <section id="home" className="min-h-screen bg-slate-900 relative overflow-hidden flex items-center">
-        {/* Advanced Animated Background */}
-        <div className="absolute inset-0 overflow-hidden">
-          {/* Base Grid Layer */}
-          <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5"></div>
-
-          {/* Gradient Overlays */}
-          <div className="absolute inset-0 bg-gradient-to-tr from-blue-950/80 via-slate-900/90 to-slate-950/80"></div>
-
-          {/* Dynamic Lighting Effects */}
-          <motion.div
-            className="absolute inset-0"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 2 }}
-          >
-            {/* Premium Light Sources */}
-            <motion.div
-              className="absolute top-[-10%] left-[-5%] w-[70%] h-[40%] bg-blue-500/10 rounded-full blur-[120px]"
-              animate={{
-                opacity: [0.4, 0.6, 0.4],
-                scale: [1, 1.05, 1],
-              }}
-              transition={{
-                duration: 8,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            ></motion.div>
-            <motion.div
-              className="absolute bottom-[-20%] right-[-10%] w-[80%] h-[60%] bg-yellow-400/5 rounded-full blur-[150px]"
-              animate={{
-                opacity: [0.3, 0.5, 0.3],
-                scale: [1, 1.1, 1],
-              }}
-              transition={{
-                duration: 10,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 2
-              }}
-            ></motion.div>
-          </motion.div>
-
-          {/* Particle Effect Layer */}
-          <motion.div
-            className="absolute inset-0"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.7 }}
-            transition={{ duration: 3 }}
-          >
-            {Array.from({ length: 15 }).map((_, index) => (
-              <motion.div
-                key={index}
-                className="absolute w-1 h-1 bg-blue-400/30 rounded-full"
-                style={{
-                  top: `${Math.random() * 100}%`,
-                  left: `${Math.random() * 100}%`,
-                }}
-                animate={{
-                  y: [0, Math.random() * -100 - 50],
-                  x: [0, (Math.random() - 0.5) * 50],
-                  opacity: [0, 0.8, 0],
-                  scale: [0, 1, 0],
-                }}
-                transition={{
-                  duration: 5 + Math.random() * 10,
-                  repeat: Infinity,
-                  delay: Math.random() * 5,
-                  ease: "easeInOut",
-                }}
-              />
-            ))}
-            {Array.from({ length: 15 }).map((_, index) => (
-              <motion.div
-                key={index + 15}
-                className="absolute w-1 h-1 bg-yellow-300/30 rounded-full"
-                style={{
-                  top: `${Math.random() * 100}%`,
-                  left: `${Math.random() * 100}%`,
-                }}
-                animate={{
-                  y: [0, Math.random() * -100 - 50],
-                  x: [0, (Math.random() - 0.5) * 50],
-                  opacity: [0, 0.8, 0],
-                  scale: [0, 1, 0],
-                }}
-                transition={{
-                  duration: 5 + Math.random() * 10,
-                  repeat: Infinity,
-                  delay: Math.random() * 5,
-                  ease: "easeInOut",
-                }}
-              />
-            ))}
-          </motion.div>
-        </div>
+      <section id="home" className="min-h-screen relative flex items-center z-10">
+        {/* Section-specific glowing elements */}
+        <motion.div 
+          className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"
+          animate={{
+            opacity: [0.3, 0.6, 0.3],
+            scale: [1, 1.2, 1],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        <motion.div 
+          className="absolute bottom-1/4 right-1/4 w-72 h-72 bg-yellow-400/5 rounded-full blur-3xl"
+          animate={{
+            opacity: [0.2, 0.5, 0.2],
+            scale: [1, 1.3, 1],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 2
+          }}
+        />
 
         <div className="container mx-auto px-4 md:px-6 relative z-10 py-12">
           <div className="flex flex-col md:flex-row items-center">
-            {/* Premium Content Section */}
+            {/* Content Section */}
             <motion.div
               className="md:w-1/2 mb-12 md:mb-0 md:pr-8"
               initial="hidden"
@@ -213,38 +147,6 @@ export default function Home() {
                 visible: { opacity: 1, transition: { staggerChildren: 0.2 } }
               }}
             >
-              {/* Brand Logo with Premium Animation */}
-              {/* <motion.div
-          variants={{
-            hidden: { opacity: 0, y: 20 },
-            visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
-          }}
-          className="inline-block mb-8 relative"
-        >
-          <div className="relative">
-            <motion.div
-              className="absolute -inset-1 rounded-lg bg-gradient-to-r from-blue-500 to-yellow-400 opacity-30 blur-lg"
-              animate={{
-                opacity: [0.2, 0.4, 0.2],
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            ></motion.div>
-            <div className="relative md:ml-0 ml-auto mr-auto w-40 h-40">
-              <Image
-                src="/assets/LOGO.png"
-                alt="PyzaSoft Logo"
-                width={160}
-                height={160}
-                className="object-contain"
-              />
-            </div>
-          </div>
-        </motion.div> */}
-
               {/* Headline with Staggered Reveal */}
               <motion.h1
                 variants={{
@@ -285,7 +187,7 @@ export default function Home() {
                 </div>
               </motion.h1>
 
-              {/* Premium Tagline */}
+              {/* Tagline */}
               <motion.p
                 variants={{
                   hidden: { opacity: 0, y: 20 },
@@ -296,7 +198,7 @@ export default function Home() {
                 Enterprise-grade solutions that drive digital transformation and deliver exceptional user experiences for industry leaders worldwide.
               </motion.p>
 
-              {/* CTA Buttons with Premium Styling */}
+              {/* CTA Buttons */}
               <motion.div
                 variants={{
                   hidden: { opacity: 0, y: 20 },
@@ -334,25 +236,9 @@ export default function Home() {
                   <span className="relative text-white">Explore Our Solutions</span>
                 </motion.a>
               </motion.div>
-
-              {/* Enterprise Credentials */}
-              {/* <motion.div
-                variants={{
-                  hidden: { opacity: 0 },
-                  visible: { opacity: 1, transition: { duration: 1.2, delay: 1.5 } }
-                }}
-                className="mt-12 flex flex-col"
-              >
-                <p className="text-sm text-gray-400 mb-3">Trusted by industry leaders</p>
-                <div className="flex items-center space-x-8">
-                  {Array.from({ length: 4 }).map((_, index) => ( 
-                    <div key={index} className="h-6 w-16 bg-gray-400/10 rounded-md"></div>
-                  ))}
-                </div>
-              </motion.div> */}
             </motion.div>
 
-            {/* Premium Visual Element */}
+            {/* Visual Element */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -491,19 +377,6 @@ export default function Home() {
                     </motion.div>
                   </div>
                 </div>
-
-                {/* Decorative Light Flares */}
-                <motion.div
-                  className="absolute top-0 right-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"
-                  animate={{ opacity: [0.1, 0.3, 0.1] }}
-                  transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-                ></motion.div>
-
-                <motion.div
-                  className="absolute bottom-0 left-1/4 w-64 h-64 bg-yellow-400/10 rounded-full blur-3xl"
-                  animate={{ opacity: [0.1, 0.3, 0.1] }}
-                  transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 4 }}
-                ></motion.div>
               </div>
             </motion.div>
           </div>
@@ -518,9 +391,6 @@ export default function Home() {
 
       {/* Team Section */}
       <TeamSection />
-
-      {/* Testimonials */}
-     
 
       {/* Contact Section */}
       <ContactUsSection />

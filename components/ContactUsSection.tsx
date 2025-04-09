@@ -3,7 +3,7 @@ import { FaEnvelope, FaArrowRight, FaPhone, FaLocationDot } from "react-icons/fa
 
 export default function ContactUsSection() {
     return (
-        <section id="contact" className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900/30 relative overflow-hidden">
+        <section id="contact" className="py-20 bg-transparent relative overflow-hidden">
             {/* Background Elements */}
             <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
             <motion.div
