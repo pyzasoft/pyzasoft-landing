@@ -474,6 +474,7 @@ export default function Home() {
       <ProjectsSection />
 
       {/* Team Section */}
+      
       {/* <TeamSection /> */}
 
       {/* Contact Section */}
