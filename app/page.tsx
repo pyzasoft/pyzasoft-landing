@@ -1,17 +1,26 @@
-'use client';
+"use client";
 
-import { motion, AnimatePresence } from 'framer-motion';
-import dynamic from 'next/dynamic';
-import { useState } from 'react';
-import Image from 'next/image';
-import { FaPython, FaGears, FaArrowRight, FaJs, FaCloud } from 'react-icons/fa6';
-import ContactUsSection from '@/components/ContactUsSection';
-import FooterSection from '@/components/FooterSection';
-import ServicesSection from '@/components/ServicesSection';
-import TeamSection from '@/components/TeamSection';
-import ProjectsSection from '@/components/ProjectsSection';
+import { motion, AnimatePresence } from "framer-motion";
+import dynamic from "next/dynamic";
+import { useState } from "react";
+import Image from "next/image";
+import {
+  FaPython,
+  FaGears,
+  FaArrowRight,
+  FaJs,
+  FaCloud,
+} from "react-icons/fa6";
+import ContactUsSection from "@/components/ContactUsSection";
+import FooterSection from "@/components/FooterSection";
+import ServicesSection from "@/components/ServicesSection";
+import TeamSection from "@/components/TeamSection";
+import ProjectsSection from "@/components/ProjectsSection";
 // import AnimatedBackground from '@/components/AnimatedBackground';
-const AnimatedBackground = dynamic(() => import('@/components/AnimatedBackground'), { ssr: false });
+const AnimatedBackground = dynamic(
+  () => import("@/components/AnimatedBackground"),
+  { ssr: false }
+);
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -48,18 +57,20 @@ export default function Home() {
 
             {/* Desktop Menu */}
             <div className="hidden md:flex space-x-8">
-              {['Home', 'Services', 'Projects', 'Team', 'Contact'].map((item, index) => (
-                <motion.a
-                  key={index}
-                  href={`#${item.toLowerCase()}`}
-                  className="text-gray-300 hover:text-yellow-400 font-medium transition-colors relative group"
-                  whileHover={{ y: -2 }}
-                  transition={{ type: 'spring', stiffness: 500 }}
-                >
-                  {item}
-                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-yellow-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-                </motion.a>
-              ))}
+              {["Home", "Services", "Projects", "Team", "Contact"].map(
+                (item, index) => (
+                  <motion.a
+                    key={index}
+                    href={`#${item.toLowerCase()}`}
+                    className="text-gray-300 hover:text-yellow-400 font-medium transition-colors relative group"
+                    whileHover={{ y: -2 }}
+                    transition={{ type: "spring", stiffness: 500 }}
+                  >
+                    {item}
+                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-yellow-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                  </motion.a>
+                )
+              )}
             </div>
 
             {/* Mobile Menu Button */}
@@ -68,11 +79,27 @@ export default function Home() {
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="text-gray-300 hover:text-yellow-400 focus:outline-none"
               >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
                   {isMenuOpen ? (
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
                   ) : (
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
                   )}
                 </svg>
               </button>
@@ -84,21 +111,23 @@ export default function Home() {
             {isMenuOpen && (
               <motion.div
                 initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: 'auto' }}
+                animate={{ opacity: 1, height: "auto" }}
                 exit={{ opacity: 0, height: 0 }}
                 className="md:hidden mt-4"
               >
                 <div className="flex flex-col space-y-4 py-4">
-                  {['Home', 'Services', 'Projects', 'Team', 'Contact'].map((item, index) => (
-                    <a
-                      key={index}
-                      href={`#${item.toLowerCase()}`}
-                      className="text-gray-300 hover:text-yellow-400 font-medium transition-colors block"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      {item}
-                    </a>
-                  ))}
+                  {["Home", "Services", "Projects", "Team", "Contact"].map(
+                    (item, index) => (
+                      <a
+                        key={index}
+                        href={`#${item.toLowerCase()}`}
+                        className="text-gray-300 hover:text-yellow-400 font-medium transition-colors block"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        {item}
+                      </a>
+                    )
+                  )}
                 </div>
               </motion.div>
             )}
@@ -107,9 +136,12 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="min-h-screen relative flex items-center z-10 sm:mt-0 mt-[20%]">
+      <section
+        id="home"
+        className="min-h-screen relative flex items-center z-10 sm:mt-0 mt-[20%]"
+      >
         {/* Section-specific glowing elements */}
-        <motion.div 
+        <motion.div
           className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"
           animate={{
             opacity: [0.3, 0.6, 0.3],
@@ -118,10 +150,10 @@ export default function Home() {
           transition={{
             duration: 8,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: "easeInOut",
           }}
         />
-        <motion.div 
+        <motion.div
           className="absolute bottom-1/4 right-1/4 w-72 h-72 bg-yellow-400/5 rounded-full blur-3xl"
           animate={{
             opacity: [0.2, 0.5, 0.2],
@@ -131,7 +163,7 @@ export default function Home() {
             duration: 10,
             repeat: Infinity,
             ease: "easeInOut",
-            delay: 2
+            delay: 2,
           }}
         />
 
@@ -144,14 +176,18 @@ export default function Home() {
               animate="visible"
               variants={{
                 hidden: { opacity: 0 },
-                visible: { opacity: 1, transition: { staggerChildren: 0.2 } }
+                visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
               }}
             >
               {/* Headline with Staggered Reveal */}
               <motion.h1
                 variants={{
                   hidden: { opacity: 0, y: 30 },
-                  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    transition: { duration: 0.8, ease: "easeOut" },
+                  },
                 }}
                 className="text-5xl md:text-7xl font-bold mb-6 leading-tight tracking-tight"
               >
@@ -160,7 +196,11 @@ export default function Home() {
                     className="block bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600"
                     initial={{ y: 80 }}
                     animate={{ y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.4, ease: [0.33, 1, 0.68, 1] }}
+                    transition={{
+                      duration: 0.8,
+                      delay: 0.4,
+                      ease: [0.33, 1, 0.68, 1],
+                    }}
                   >
                     Transform
                   </motion.span>
@@ -170,7 +210,11 @@ export default function Home() {
                     className="block text-white"
                     initial={{ y: 80 }}
                     animate={{ y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.6, ease: [0.33, 1, 0.68, 1] }}
+                    transition={{
+                      duration: 0.8,
+                      delay: 0.6,
+                      ease: [0.33, 1, 0.68, 1],
+                    }}
                   >
                     Ideas Into
                   </motion.span>
@@ -180,7 +224,11 @@ export default function Home() {
                     className="block bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-yellow-300"
                     initial={{ y: 80 }}
                     animate={{ y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.8, ease: [0.33, 1, 0.68, 1] }}
+                    transition={{
+                      duration: 0.8,
+                      delay: 0.8,
+                      ease: [0.33, 1, 0.68, 1],
+                    }}
                   >
                     Reality
                   </motion.span>
@@ -191,18 +239,28 @@ export default function Home() {
               <motion.p
                 variants={{
                   hidden: { opacity: 0, y: 20 },
-                  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut", delay: 1 } }
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    transition: { duration: 0.8, ease: "easeOut", delay: 1 },
+                  },
                 }}
                 className="text-lg md:text-xl text-gray-300/90 mb-10 max-w-xl leading-relaxed"
               >
-                Enterprise-grade solutions that drive digital transformation and deliver exceptional user experiences for industry leaders worldwide.
+                Enterprise-grade solutions that drive digital transformation and
+                deliver exceptional user experiences for industry leaders
+                worldwide.
               </motion.p>
 
               {/* CTA Buttons */}
               <motion.div
                 variants={{
                   hidden: { opacity: 0, y: 20 },
-                  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut", delay: 1.2 } }
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    transition: { duration: 0.8, ease: "easeOut", delay: 1.2 },
+                  },
                 }}
                 className="flex flex-col sm:flex-row gap-5"
               >
@@ -219,7 +277,11 @@ export default function Home() {
                     <motion.span
                       className="ml-2"
                       animate={{ x: [0, 4, 0] }}
-                      transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+                      transition={{
+                        repeat: Infinity,
+                        duration: 1.5,
+                        ease: "easeInOut",
+                      }}
                     >
                       <FaArrowRight />
                     </motion.span>
@@ -233,7 +295,9 @@ export default function Home() {
                   className="px-8 py-4 rounded-lg font-semibold relative group overflow-hidden flex items-center justify-center border border-blue-700/30"
                 >
                   <span className="absolute inset-0 bg-gradient-to-r from-blue-600/5 to-blue-800/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-                  <span className="relative text-white">Explore Our Solutions</span>
+                  <span className="relative text-white">
+                    Explore Our Solutions
+                  </span>
                 </motion.a>
               </motion.div>
             </motion.div>
@@ -251,7 +315,11 @@ export default function Home() {
                   <motion.div
                     className="relative w-[400px] h-[400px]"
                     animate={{ rotate: 360 }}
-                    transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+                    transition={{
+                      duration: 40,
+                      repeat: Infinity,
+                      ease: "linear",
+                    }}
                   >
                     {/* Orbital Ring */}
                     <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[380px] h-[380px] rounded-full border border-blue-500/20"></div>
@@ -262,7 +330,11 @@ export default function Home() {
                     <motion.div
                       className="absolute top-0 left-1/2 transform -translate-x-1/2 w-16 h-16 flex items-center justify-center"
                       animate={{ rotate: -360 }}
-                      transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+                      transition={{
+                        duration: 40,
+                        repeat: Infinity,
+                        ease: "linear",
+                      }}
                     >
                       <div className="w-12 h-12 bg-blue-900/70 backdrop-blur-md rounded-full flex items-center justify-center shadow-lg shadow-blue-900/20 border border-blue-800/50">
                         <FaCloud className="text-blue-400" size={24} />
@@ -272,7 +344,11 @@ export default function Home() {
                     <motion.div
                       className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-16 flex items-center justify-center"
                       animate={{ rotate: -360 }}
-                      transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+                      transition={{
+                        duration: 40,
+                        repeat: Infinity,
+                        ease: "linear",
+                      }}
                     >
                       <div className="w-12 h-12 bg-blue-900/70 backdrop-blur-md rounded-full flex items-center justify-center shadow-lg shadow-blue-900/20 border border-blue-800/50">
                         <FaPython className="text-yellow-400" size={24} />
@@ -282,7 +358,11 @@ export default function Home() {
                     <motion.div
                       className="absolute left-0 top-1/2 transform -translate-y-1/2 w-16 h-16 flex items-center justify-center"
                       animate={{ rotate: -360 }}
-                      transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+                      transition={{
+                        duration: 40,
+                        repeat: Infinity,
+                        ease: "linear",
+                      }}
                     >
                       <div className="w-12 h-12 bg-blue-900/70 backdrop-blur-md rounded-full flex items-center justify-center shadow-lg shadow-blue-900/20 border border-blue-800/50">
                         <FaGears className="text-blue-400" size={24} />
@@ -292,7 +372,11 @@ export default function Home() {
                     <motion.div
                       className="absolute right-0 top-1/2 transform -translate-y-1/2 w-16 h-16 flex items-center justify-center"
                       animate={{ rotate: -360 }}
-                      transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+                      transition={{
+                        duration: 40,
+                        repeat: Infinity,
+                        ease: "linear",
+                      }}
                     >
                       <div className="w-12 h-12 bg-blue-900/70 backdrop-blur-md rounded-full flex items-center justify-center shadow-lg shadow-blue-900/20 border border-blue-800/50">
                         <FaJs className="text-yellow-400" size={24} />
@@ -306,23 +390,23 @@ export default function Home() {
                       className="relative w-48 h-48"
                       animate={{
                         rotate: [0, 10, 0, -10, 0],
-                        scale: [1, 1.05, 1, 1.05, 1]
+                        scale: [1, 1.05, 1, 1.05, 1],
                       }}
                       transition={{
                         duration: 10,
                         repeat: Infinity,
-                        ease: "easeInOut"
+                        ease: "easeInOut",
                       }}
                     >
                       <motion.div
                         className="absolute -inset-6 rounded-full opacity-20 blur-2xl bg-gradient-to-r from-blue-500 to-yellow-400"
                         animate={{
-                          opacity: [0.1, 0.3, 0.1]
+                          opacity: [0.1, 0.3, 0.1],
                         }}
                         transition={{
                           duration: 4,
                           repeat: Infinity,
-                          ease: "easeInOut"
+                          ease: "easeInOut",
                         }}
                       ></motion.div>
 
@@ -336,12 +420,12 @@ export default function Home() {
                             scale: [1, 1.2, 1],
                             opacity: [0.2, 0.4, 0.2],
                             x: [-5, 5, -5],
-                            y: [-5, 5, -5]
+                            y: [-5, 5, -5],
                           }}
                           transition={{
                             duration: 5,
                             repeat: Infinity,
-                            ease: "easeInOut"
+                            ease: "easeInOut",
                           }}
                         ></motion.div>
 
@@ -351,13 +435,13 @@ export default function Home() {
                             scale: [1, 1.2, 1],
                             opacity: [0.2, 0.4, 0.2],
                             x: [5, -5, 5],
-                            y: [5, -5, 5]
+                            y: [5, -5, 5],
                           }}
                           transition={{
                             duration: 5,
                             repeat: Infinity,
                             ease: "easeInOut",
-                            delay: 1
+                            delay: 1,
                           }}
                         ></motion.div>
 
@@ -385,12 +469,12 @@ export default function Home() {
 
       {/* Services Section */}
       <ServicesSection />
-      
+
       {/* Projects Section */}
       <ProjectsSection />
 
       {/* Team Section */}
-      <TeamSection />
+      {/* <TeamSection /> */}
 
       {/* Contact Section */}
       <ContactUsSection />
